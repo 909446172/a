@@ -17,4 +17,9 @@ public class TestController {
     public String test(@PathVariable String test) {
         return test;
     }
+
+    @RequestMapping("/a/{test}")
+    public String atest(@PathVariable String test) {
+        return test;
+    }
 }
