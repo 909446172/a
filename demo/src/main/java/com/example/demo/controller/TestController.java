@@ -18,7 +18,7 @@ public class TestController {
         return test;
     }
 
-    @RequestMapping("/a/{test}")
+    @RequestMapping("/b/{test}")
     public String atest(@PathVariable String test) {
         return test;
     }
