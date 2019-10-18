@@ -18,7 +18,6 @@
         <java.version>11</java.version>
         <registryUrl>192.168.64.128:5000</registryUrl>
         <imageVersion>1.0</imageVersion>
-        <JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
     </properties>
 
     <dependencies>
