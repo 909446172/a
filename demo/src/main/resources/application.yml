@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: demo
+  profiles:
+    active: log
+server:
+  port: 8002
+logging:
+  file:
+    max-size: 100MB
+    max-history: 60
+  path: /tmp/leve/logs/${spring.application.name}
