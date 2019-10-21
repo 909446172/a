@@ -1,0 +1,20 @@
+2019-10-21 09:43:32.308  INFO 10132 --- [main] com.example.demo.DemoApplication         : Starting DemoApplication on DESKTOP-5SNTDB0 with PID 10132 (D:\Develop\a\demo\target\classes started by Song in D:\Develop\a)
+2019-10-21 09:43:32.310  INFO 10132 --- [main] com.example.demo.DemoApplication         : The following profiles are active: log
+2019-10-21 09:43:33.228  INFO 10132 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8002 (http)
+2019-10-21 09:43:33.249  INFO 10132 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-10-21 09:43:33.249  INFO 10132 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.26]
+2019-10-21 09:43:33.350  INFO 10132 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-10-21 09:43:33.350  INFO 10132 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 978 ms
+2019-10-21 09:43:33.502  INFO 10132 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-10-21 09:43:33.635  INFO 10132 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8002 (http) with context path ''
+2019-10-21 09:43:33.638  INFO 10132 --- [main] com.example.demo.DemoApplication         : Started DemoApplication in 1.797 seconds (JVM running for 2.769)
+2019-10-21 09:43:47.816  INFO 11460 --- [main] com.example.demo.DemoApplication         : Starting DemoApplication on DESKTOP-5SNTDB0 with PID 11460 (D:\Develop\a\demo\target\classes started by Song in D:\Develop\a)
+2019-10-21 09:43:47.817  INFO 11460 --- [main] com.example.demo.DemoApplication         : The following profiles are active: log
+2019-10-21 09:43:48.723  INFO 11460 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8002 (http)
+2019-10-21 09:43:48.745  INFO 11460 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-10-21 09:43:48.745  INFO 11460 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.26]
+2019-10-21 09:43:48.825  INFO 11460 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-10-21 09:43:48.825  INFO 11460 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 970 ms
+2019-10-21 09:43:48.983  INFO 11460 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-10-21 09:43:49.119  INFO 11460 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8002 (http) with context path ''
+2019-10-21 09:43:49.123  INFO 11460 --- [main] com.example.demo.DemoApplication         : Started DemoApplication in 1.712 seconds (JVM running for 2.744)
