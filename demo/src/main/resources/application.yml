@@ -10,5 +10,3 @@ logging:
     max-size: 100MB
     max-history: 60
   path: /tmp/leve/logs/${spring.application.name}
-
-config
