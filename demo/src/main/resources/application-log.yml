@@ -3,4 +3,4 @@ logging:
   file:
     max-size: 100MB
     max-history: 60
-  path: /tmp/leve/logs/${spring.application.name}
+  path: /root/app/leve/logs/${spring.application.name}
