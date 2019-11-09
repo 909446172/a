@@ -7,7 +7,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.net.InetAddress;
+import java.net.NetworkInterface;
+import java.net.SocketException;
 import java.net.UnknownHostException;
+import java.util.Enumeration;
 
 /**
  * @Author zyy
@@ -19,8 +22,14 @@ import java.net.UnknownHostException;
 public class TestController {
 
 
+    @RequestMapping("/{test}/a")
+    public String test1(@PathVariable String test) {
+     
+        return test+"/a";
+    }
+
     @RequestMapping
-    public  String test() throws UnknownHostException {
+    public  String test() throws UnknownHostException, SocketException {
         InetAddress inetAddress = InetAddress.getLocalHost();
         return inetAddress.getHostAddress() + "\t" + inetAddress.getHostName() + "\t" + inetAddress.getCanonicalHostName();
     }
