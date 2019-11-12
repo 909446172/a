@@ -1,18 +1,16 @@
 package com.example.demo.controller;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.net.InetAddress;
-import java.net.NetworkInterface;
 import java.net.SocketException;
 import java.net.UnknownHostException;
-import java.util.Enumeration;
 import java.util.List;
 
 /**
@@ -26,6 +24,18 @@ public class TestController {
 
     @Autowired
     private DiscoveryClient discoveryClient;
+
+    @RequestMapping("super")
+    @HystrixCommand(fallbackMethod = "supersede")
+    public String sup() {
+
+        return String.valueOf(1/ 0);
+    }
+
+    public String supersede() {
+        return "supersede";
+    }
+
 
     @RequestMapping("/services")
     public List<String> services() {
