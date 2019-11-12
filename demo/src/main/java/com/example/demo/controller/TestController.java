@@ -1,7 +1,9 @@
 package com.example.demo.controller;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,6 +13,7 @@ import java.net.NetworkInterface;
 import java.net.SocketException;
 import java.net.UnknownHostException;
 import java.util.Enumeration;
+import java.util.List;
 
 /**
  * @Author zyy
@@ -20,6 +23,14 @@ import java.util.Enumeration;
 @Slf4j
 @RestController
 public class TestController {
+
+    @Autowired
+    private DiscoveryClient discoveryClient;
+
+    @RequestMapping("/services")
+    public List<String> services() {
+        return this.discoveryClient.getServices();
+    }
 
 
     @RequestMapping("/{test}/a")
