@@ -24,7 +24,7 @@ public class TestController {
 
     @RequestMapping("/{test}/a")
     public String test1(@PathVariable String test) {
-     
+
         return test+"/a";
     }
 
