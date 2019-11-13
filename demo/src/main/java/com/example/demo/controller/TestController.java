@@ -1,6 +1,5 @@
 package com.example.demo.controller;
 
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
@@ -24,17 +23,6 @@ public class TestController {
 
     @Autowired
     private DiscoveryClient discoveryClient;
-
-    @RequestMapping("super")
-    @HystrixCommand(fallbackMethod = "supersede")
-    public String sup() {
-
-        return String.valueOf(1/ 0);
-    }
-
-    public String supersede() {
-        return "supersede";
-    }
 
 
     @RequestMapping("/services")
