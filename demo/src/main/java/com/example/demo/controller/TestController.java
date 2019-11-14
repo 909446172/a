@@ -4,6 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.context.ApplicationContext;
+import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -25,9 +26,9 @@ public class TestController {
     @Autowired
     private DiscoveryClient discoveryClient;
 
-    @Autowired
-    ApplicationContext applicationContext;
 
+    @Autowired
+    Environment environment;
 
     @RequestMapping("/services")
     public List<String> services() {
@@ -37,8 +38,8 @@ public class TestController {
 
     @RequestMapping("/app")
     public  String app() {
-        String applicationName = applicationContext.getApplicationName();
-        return applicationName;
+        String property = environment.getProperty("spring.application.name");
+        return property;
     }
     @RequestMapping("/{test}/a")
     public String test1(@PathVariable String test) {
