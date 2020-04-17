@@ -42,9 +42,9 @@ public class TestController {
         return property;
     }
     @RequestMapping("/{test}/a")
-    public String test1(@PathVariable String test) {
+    public String test1(@PathVariable String test) throws SocketException, UnknownHostException {
 
-        return test+"/a";
+        return test+"-----------------"+test();
     }
 
     @RequestMapping
