@@ -16,8 +16,9 @@
 
     <properties>
         <java.version>11</java.version>
-        <imageVersion>1.0</imageVersion>
         <spring-cloud.version>Greenwich.SR3</spring-cloud.version>
+        <dockerfile-maven-version>1.4.13</dockerfile-maven-version>
+        <docker.image.prefix>registry.leve.com:5000/leve</docker.image.prefix>
     </properties>
 
     <dependencies>
@@ -61,43 +62,30 @@
 
     <build>
         <plugins>
-
-
-            <!--<plugin>-->
-                <!--<groupId>org.apache.maven.plugins</groupId>-->
-                <!--<artifactId>maven-deploy-plugin</artifactId>-->
-                <!--<configuration>-->
-                    <!--<skip>true</skip>-->
-                <!--</configuration>-->
-            <!--</plugin>-->
-            <!--<plugin>-->
-                <!--<groupId>com.spotify</groupId>-->
-                <!--<artifactId>dockerfile-maven-plugin</artifactId>-->
-                <!--<version>1.4.10</version>-->
-                <!--<executions>-->
-                    <!--<execution>-->
-                        <!--<id>default</id>-->
-                        <!--<goals>-->
-                            <!--&lt;!&ndash;如果package时不想用docker打包,就注释掉这个goal&ndash;&gt;-->
-                            <!--<goal>build</goal>-->
-                            <!--<goal>push</goal>-->
-                        <!--</goals>-->
-                    <!--</execution>-->
-                <!--</executions>-->
-                <!--<configuration>-->
-                    <!--<repository>${registryUrl}/${project.artifactId}</repository>-->
-                    <!--<tag>${project.version}</tag>-->
-                    <!--<buildArgs>-->
-                        <!--&lt;!&ndash;提供参数向Dockerfile传递&ndash;&gt;-->
-                        <!--<JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>-->
-                    <!--</buildArgs>-->
-                <!--</configuration>-->
-            <!--</plugin>-->
-
-
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>dockerfile-maven-plugin</artifactId>
+                <version>${dockerfile-maven-version}</version>
+                <executions>
+                    <execution>
+                        <id>default</id>
+                        <goals>
+                            <goal>build</goal>
+                            <goal>push</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <repository>${docker.image.prefix}/${project.artifactId}</repository>
+                    <!--<tag>${project.version}</tag>-->
+                    <buildArgs>
+                        <JAR_FILE>${project.build.finalName}.jar</JAR_FILE>
+                    </buildArgs>
+                </configuration>
             </plugin>
         </plugins>
 
